@@ -67,8 +67,12 @@ int main() {
             fattoriale: n! = 1 * 2 * 3 * ... * n [LEONARDO]
             logaritmo naturale [CORRADO]
             negazione: trovo -n [SEBASTIAN]
-            incremento: n + 1 [NICOLO']
-            decremento: n - 1 [NICOLO']
+            int incremento(int numero_1) {
+                return numero_1 + 1; 
+            }
+            int decremento(int numero_1)
+                return numero_1 - 1;
+            }
             doppio: 2*n [MATTIA]
             valore assoluto: numero senza segno [SEBASTIAN]
             pari: trovo se è pari (booleano) [NICOLO']
