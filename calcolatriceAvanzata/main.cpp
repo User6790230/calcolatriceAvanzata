@@ -4,10 +4,6 @@ using namespace std;
 #define MIN_MOD 0
 #define MAX_MOD 5
 
-void funzione() {
-    cout << "Una funzione" << endl;
-}
-
 /* Stampa i saluti iniziali */
 void benvenuti() {
     cout << "Benvenuti nella Calcolatrice Avanzata della 3CI" << endl;
