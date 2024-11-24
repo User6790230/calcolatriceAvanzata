@@ -47,6 +47,20 @@ int scelta_menu() {
     return scelta;
 }
 
+/* Funzione doppio */
+int doppio(int n1) {
+	return 2 * n1;
+}
+
+/* Funzione successione */
+void successione(int n1) {
+	int i = 0;
+	while (i < n1) {
+		cout << i << ", ";
+		i ++;
+	}
+}
+
 /* Funzione principale */
 int main() {
     int scelta = 0;
