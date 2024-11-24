@@ -47,6 +47,27 @@ int scelta_menu() {
     return scelta;
 }
 
+/* Funzione incremento */
+int incremento(int n1) {
+	return n1 + 1;
+}
+
+/* Funzione decremento */
+int decremento(int n1) {
+	return n1 - 1;
+}
+
+/* Funzione positività del numero */
+bool positivo(int n1) {
+	bool positivo = true;
+	if (n1 > 0) {
+	  	positivo = true;
+	} else {
+	    positivo = false;
+	}
+	return positivo;
+}
+
 /* Funzione principale */
 int main() {
     int scelta = 0;
@@ -67,8 +88,8 @@ int main() {
             fattoriale: n! = 1 * 2 * 3 * ... * n [LEONARDO]
             logaritmo naturale [CORRADO]
             negazione: trovo -n [SEBASTIAN]
-            incremento: n + 1 [NICOLO']
-            decremento: n - 1 [NICOLO']
+            incremento [NICOLO']
+            decremento [NICOLO']
             doppio: 2*n [MATTIA]
             valore assoluto: numero senza segno [SEBASTIAN]
             pari: trovo se è pari (booleano) [NICOLO']
