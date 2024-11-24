@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+
 #define MIN_MOD 0
 #define MAX_MOD 5
 
@@ -40,25 +41,38 @@ int scelta_menu() {
     cin >> scelta;
     
     while (scelta > MAX_MOD || scelta < MIN_MOD) {
-        cout << "Inserisci la scelta: ";
+        cout << "Inserisci una scelta valida: ";
         cin >> scelta;
     }
     
     return scelta;
 }
 
+/* Funzione incremento */
+int incremento(int n1) {
+    return n1 + 1;
+}
+
+/* Funzione decremento */
+int decremento(int n1) {
+    return n1 - 1;
+}
+
 /* Funzione doppio */
 int doppio(int n1) {
-	return 2 * n1;
+    return 2 * n1;
 }
 
 /* Funzione successione */
 void successione(int n1) {
-	int i = 0;
-	while (i < n1) {
-		cout << i << ", ";
-		i ++;
-	}
+    for (int i = 0; i <= n1; ++i) {
+        cout << i << (i < n1 ? ", " : "\n");
+    }
+}
+
+/* Funzione positività del numero */
+bool positivo(int n1) {
+    return n1 > 0;
 }
 
 /* Funzione principale */
@@ -68,34 +82,49 @@ int main() {
     benvenuti();
     regole_menu();
     scelta = scelta_menu();
+    
     if (scelta == 0) {
         crediti();
     } else if (scelta == 1) {
-        cout << "Sei nella modalita' unaria di base" << endl;
-        cout << "Scegli tra: " << endl;
-        cout << "Radice quadrata [digitare 0]"<< endl;
-        /*
-            radice quadrata [LEONARDO]
-            quadrato
-            cubo
-            fattoriale: n! = 1 * 2 * 3 * ... * n [LEONARDO]
-            logaritmo naturale [CORRADO]
-            negazione: trovo -n [SEBASTIAN]
-            incremento: n + 1 [NICOLO']
-            decremento: n - 1 [NICOLO']
-            doppio: 2*n [MATTIA]
-            valore assoluto: numero senza segno [SEBASTIAN]
-            pari: trovo se è pari (booleano) [NICOLO']
-            positività: trovo se è positivo (booleano)
-            uguale a 0: booleano
-            potenza per se stesso [CORRADO]
-            10 alla n [KOL]
-            successione: se do n, stampa: 1 2 3 4 5 ... n-1 n [MATTIA]
-            tabellina: se do n, trovo la tabellina di n [KOL]
-         */
+        cout << "Sei nella modalità unaria di base" << endl;
+        cout << "Inserisci un numero: ";
+        int numero;
+        cin >> numero;
+
+        cout << "Seleziona una funzione: " << endl;
+        cout << "[1] Incremento" << endl;
+        cout << "[2] Decremento" << endl;
+        cout << "[3] Doppio" << endl;
+        cout << "[4] Successione" << endl;
+        cout << "[5] Verifica positività" << endl;
+
+        int funzione;
+        cin >> funzione;
+
+        switch (funzione) {
+            case 1:
+                cout << "Incremento: " << incremento(numero) << endl;
+                break;
+            case 2:
+                cout << "Decremento: " << decremento(numero) << endl;
+                break;
+            case 3:
+                cout << "Doppio: " << doppio(numero) << endl;
+                break;
+            case 4:
+                cout << "Successione fino a " << numero << ": ";
+                successione(numero);
+                break;
+            case 5:
+                cout << "Positività: " << (positivo(numero) ? "Positivo" : "Non positivo") << endl;
+                break;
+            default:
+                gestisci_errore();
+                break;
+        }
+    } else {
+        gestisci_errore();
     }
-    
     
     return 0;
 }
-
